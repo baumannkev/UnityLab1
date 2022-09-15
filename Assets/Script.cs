@@ -7,6 +7,7 @@ public class Script : MonoBehaviour
     public GameObject cube;
     public Vector3 rvect = Vector3.one;
     public float speed = 1.0f;
+    
 
     private bool isRotating;
     // Start is called before the first frame update
@@ -22,7 +23,7 @@ public class Script : MonoBehaviour
 
         if (isRotating)
         {
-            cube.transform.Rotate(0.5f, 0.0f, 0.0f);
+            cube.transform.Rotate(0.5f, 0.0f, 0.5f);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -37,32 +38,44 @@ public class Script : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            cube.transform.Translate(0, 0, 0.5f);
+            Vector3 y = new Vector3(0, 0, 1.0f);
+            //cube.transform.position += new Vector3(0, 0, 1);
+            cube.transform.position += y;
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            cube.transform.Translate(0, 0, -0.5f);
+            Vector3 y = new Vector3(0, 0, -1.0f);
+            //cube.transform.position += new Vector3(0, 0, -1);
+            cube.transform.position += y;
         }
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            cube.transform.Translate(0.5f, 0, 0);
+            Vector3 x = new Vector3(1.0f, 0, 0);
+            //cube.transform.position += new Vector3(0, 1, 0);
+            cube.transform.position += x;
         }
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            cube.transform.Translate(-0.5f, 0, 0);
+            Vector3 x = new Vector3(-1.0f, 0, 0);
+            //cube.transform.position += new Vector3(0, -1, 0);
+            cube.transform.position += x;
         }
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            cube.transform.Translate(0, 0.5f, 0);
+            Vector3 y = new Vector3( 0, 1.0f, 0);
+            //cube.transform.position += new Vector3(0, 1, 0);
+            cube.transform.position += y;
         }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            cube.transform.Translate(0, -0.5f, 0);
+            Vector3 y = new Vector3(0, -1.0f,  0);
+            //cube.transform.position += new Vector3(0, 1, 0);
+            cube.transform.position += y;
         }
 
         if (Input.GetKeyDown(KeyCode.R))
